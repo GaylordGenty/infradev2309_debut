@@ -1,20 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using model;
+using src;
 
-public static void Main() {
+namespace src
+{
+    class Program
+    {
+        public static void Main()
+        {
+            PeopleContainer pContainer = new PeopleContainer();
 
-    Person person1 = new Person(nom, prenom)
+            Person person1 = new Person();
 
-    Console.WriteLine("Entrez votre noms")
-    person1.Nom = Console.Readline()
+            Console.WriteLine("Entrez votre noms");
+            person1.Nom = Console.ReadLine();
 
-    Console.WriteLine("Entrez votre prénoms")
-    person1.Prenom = Console.Readline()
+            Console.WriteLine("Entrez votre prénoms");
+            person1.Prenom = Console.ReadLine();
 
-    Console.WriteLine("Nom : "+ person1.Nom +"\nPrénom :"+ person1.Prenom)
-    
+            pContainer.Persons.Add(person1);
+
+            Console.WriteLine("Nom : " + person1.Nom + "\nPrénom :" + person1.Prenom);
+
+            Console.WriteLine(pContainer.Persons.Count);
+
+        }
+    }
 }
+
        
 
 
