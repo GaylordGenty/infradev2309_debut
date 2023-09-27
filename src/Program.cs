@@ -7,10 +7,30 @@ namespace src
 {
     class Program
     {
+        public static void creatPerson(string nom, string prenom, PeopleContainer pC)
+        {
+
+            Person person = new Person();
+
+            person.Prenom = prenom;
+            person.Nom = nom;
+
+            pC.Persons.Add(person);
+        }
+
+
         public static void Main()
         {
             PeopleContainer pContainer = new PeopleContainer();
             Person person;
+                     
+
+            person = new Person();
+
+            creatPerson("Bébou", "Badabou", pContainer);
+            creatPerson("Stylo", "Quatrecouleur", pContainer);
+            creatPerson("Sax", "Hubert", pContainer);
+
 
             bool b = true;
             string s;
@@ -40,6 +60,7 @@ namespace src
             }
             while (b);
         }
+        
     }
 }
 
