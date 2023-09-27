@@ -1,16 +1,6 @@
 ﻿using System;
-
-public class Person {
-
-    public string Nom {get;set};
-    public string Prenom {get;set};
-
-    public Person(string nom, string prenom) {
-        Nom = nom;
-        Prenom = prenom;
-        
-    }
-}
+using System.Collections.Generic;
+using model;
 
 public static void Main() {
 
