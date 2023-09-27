@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using src;
 
 namespace src
@@ -9,26 +10,39 @@ namespace src
         public static void Main()
         {
             PeopleContainer pContainer = new PeopleContainer();
+            Person person;
 
-            Person person1 = new Person();
+            bool b = true;
+            string s;
 
-            Console.WriteLine("Entrez votre noms");
-            person1.Nom = Console.ReadLine();
-
-            Console.WriteLine("Entrez votre prénoms");
-            person1.Prenom = Console.ReadLine();
-
-            pContainer.Persons.Add(person1);
-
-            Console.WriteLine("Nom : " + person1.Nom + "\nPrénom :" + person1.Prenom);
-
-            Console.WriteLine(pContainer.Persons.Count);
-
+            do
+            {
+                Console.WriteLine("voulez vous ajouter un nouvel utilisateur? oui/non ");
+                s = Console.ReadLine();
+                if (s == "oui")
+                {
+                    person = new Person();
+                    Console.WriteLine("Entrez votre nom");
+                    person.Nom = Console.ReadLine();
+                    Console.WriteLine("Entrez votre prénom");
+                    person.Prenom = Console.ReadLine();
+                    pContainer.Persons.Add(person);
+                }
+                else
+                {
+                    Console.WriteLine("Good Bye Marylou!");
+                    foreach(Person p in pContainer.Persons)
+                    {
+                        Console.WriteLine(p.Prenom + " " + p.Nom);
+                    }
+                    b = false;
+                }
+            }
+            while (b);
         }
     }
 }
 
-       
 
 
 
@@ -36,4 +50,4 @@ namespace src
 
 
 
-    
+
